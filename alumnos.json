@@ -1,0 +1,16 @@
+[
+    {
+        "nombres": "Juan Carlos Editado",
+        "Apaterno": "Fernandez Editado",
+        "Amaterno": "Lopez",
+        "curp": "JCFL992018HCLCRL01",
+        "matricula": "22170022"
+    },
+    {
+        "nombres": "Maria Fernanda",
+        "Apaterno": "Gomez",
+        "Amaterno": "Martinez",
+        "curp": "MGFM992018HCLCRL02",
+        "matricula": "22170023"
+    }
+]
