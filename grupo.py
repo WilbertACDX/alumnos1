@@ -1,3 +1,4 @@
+import json
 from ContenedorDatos import ContenedorDatos
 from alumno import Alumno
 
@@ -24,6 +25,18 @@ class Grupo(ContenedorDatos):
             return f"Grupo: {self.grado} {self.seccion}\nAlumnos:\n{alumnos_info}"
         else:
             return "Contenedor de grupos:\n" + "\n".join(str(grupo) for grupo in self)
+        
+    def to_dict(self):
+        return {
+            'grado': self.grado,
+            'seccion': self.seccion,
+            'alumnos': [alumno.to_dict() for alumno in self.alumnos.datos]
+        }
+
+def guardar_en_json(contenedor_grupos, nombre_archivo):
+    with open(nombre_archivo, 'w') as file:
+        grupos_data = [grupo.to_dict() for grupo in contenedor_grupos.datos]
+        json.dump(grupos_data, file, indent=4)
 
 
 if __name__ == '__main__':
@@ -37,7 +50,7 @@ if __name__ == '__main__':
     
     alumno3 = Alumno ("José Eliaz", "Galarza", "Pedroza", "DJFKSLDMS1547845KD","221740024")
     alumno4 = Alumno ("Felix Gael", "Saldivar", "Martinez", "KDFGFDG541515_FG","221740025")
-    alumno5 = Alumno ("Kevin Alexis", "Yescas", "Felix", "YFKA544541151sd","221740026")
+    alumno5 = Alumno ("Kevin Alexis", "Yescas", "Felix", "YFKA544541151sd","2217400268")
 
     grupo1.agregar_alumno(alumno0)
     grupo1.agregar_alumno(alumno1)
@@ -60,3 +73,6 @@ if __name__ == '__main__':
        
     print("\nContenedor")
     print(contenerGrupo)
+    
+    guardar_en_json(contenerGrupo, 'grupos.json')
+    print("\nLos datos han sido guardados en 'grupos.json'.")
