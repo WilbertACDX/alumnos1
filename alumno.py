@@ -1,4 +1,5 @@
 import json
+import os
 from ContenedorDatos import ContenedorDatos 
     
 class Alumno(ContenedorDatos):
@@ -35,12 +36,13 @@ class Alumno(ContenedorDatos):
         }
 
 def guardar_en_json(arreglo, nombre_archivo):
-    with open(nombre_archivo, 'w') as file:
-        alumnos_data = [alumno.to_dict() for alumno in arreglo]
+    ruta_archivo = os.path.join('alumnos1', nombre_archivo)
+    with open(ruta_archivo, 'w') as file:
+        alumnos_data = [grupo.to_dict() for grupo in arreglo.datos]
         json.dump(alumnos_data, file, indent=4)
 
 if __name__ == '__main__':
-    alumno0 = Alumno("Wilbert Omar", "Acosta", "Barrera", "AOBW9980318HCLCRL08", "22170021")
+    alumno0 = Alumno("Wilbert Omar", "Acosta", "Barrera", "AOBW9980318HCLCRL08", "221700211")
     alumno1 = Alumno("Juan Carlos", "Fernandez", "Lopez", "JCFL992018HCLCRL01", "22170022")
     alumno2 = Alumno("Maria Fernanda", "Gomez", "Martinez", "MGFM992018HCLCRL02", "22170023")
 
@@ -59,9 +61,9 @@ if __name__ == '__main__':
     print(arreglo)
 
     # Eliminar un alumno
-    arreglo.eliminar_dato(0)
-    print("\nDespués de eliminar un alumno:")
-    print(arreglo)
+    #arreglo.eliminar_dato(0)
+    #print("\nDespués de eliminar un alumno:")
+    #print(arreglo)
     
     # Longitud del arreglo
     print(f"Total de datos en el contenedor: {len(arreglo)}")

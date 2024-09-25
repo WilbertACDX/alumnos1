@@ -1,4 +1,5 @@
 import json
+import os
 from ContenedorDatos import ContenedorDatos
 from alumno import Alumno
 
@@ -34,7 +35,9 @@ class Grupo(ContenedorDatos):
         }
 
 def guardar_en_json(contenedor_grupos, nombre_archivo):
-    with open(nombre_archivo, 'w') as file:
+    # Define la ruta relativa a la carpeta 'alumnos1'
+    ruta_archivo = os.path.join('alumnos1', nombre_archivo)
+    with open(ruta_archivo, 'w') as file:
         grupos_data = [grupo.to_dict() for grupo in contenedor_grupos.datos]
         json.dump(grupos_data, file, indent=4)
 
@@ -48,7 +51,7 @@ if __name__ == '__main__':
     alumno1 = Alumno("Juan Carlos", "Fernandez", "Lopez", "JCFL992018HCLCRL01", "22170022")
     alumno2 = Alumno("Maria Fernanda", "Gomez", "Martinez", "MGFM992018HCLCRL02", "22170023")
     
-    alumno3 = Alumno ("José Eliaz", "Galarza", "Pedroza", "DJFKSLDMS1547845KD","221740024")
+    alumno3 = Alumno ("Jose Eliaz", "Galarza", "Pedroza", "DJFKSLDMS1547845KD","221740024")
     alumno4 = Alumno ("Felix Gael", "Saldivar", "Martinez", "KDFGFDG541515_FG","221740025")
     alumno5 = Alumno ("Kevin Alexis", "Yescas", "Felix", "YFKA544541151sd","2217400268")
 
