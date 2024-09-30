@@ -1,23 +1,24 @@
 import json
 import os
+from typing import Dict, Any
 from ContenedorDatos import ContenedorDatos 
 
 class Alumno(ContenedorDatos):
+    """
+    Representa a un alumno con sus datos personales o un contenedor de alumnos.
+    """
     def __init__(self, *args):
         if len(args) == 0:
             super().__init__()
         elif len(args) == 5:
             self.nombres, self.Apaterno, self.Amaterno, self.curp, self.matricula = args
         else:
-            raise ValueError("Necesitas 5 parámetros")
+            raise ValueError("Necesitas 0 o 5 parámetros")
 
-    def obtener_info(self):
-        if hasattr(self, 'nombres'):
-            return f"Alumno: {self.nombres}, Apellido Paterno: {self.Apaterno}, Apellido Materno: {self.Amaterno}, Curp: {self.curp}, Matricula: {self.matricula}"
-        else:
-            return "Este es un contenedor de datos."
-
-    def __str__(self):
+    def __str__(self) -> str:
+        """
+        Retorna una representación en cadena del alumno o del contenedor.
+        """
         if hasattr(self, 'nombres'):
             return f"Alumno: {self.nombres} {self.Apaterno} {self.Amaterno} - CURP: {self.curp} - Matricula: {self.matricula}"
         elif hasattr(self, 'datos'):
@@ -25,9 +26,11 @@ class Alumno(ContenedorDatos):
         else:
             return "Contenedor vacío."
 
-    def to_dict(self):
+    def to_dict(self) -> Dict[str, Any]:
+        """
+        Convierte el objeto Alumno o el contenedor a un diccionario.
+        """
         if hasattr(self, 'nombres'):
-            # Es un solo alumno
             return {
                 "nombres": self.nombres,
                 "Apaterno": self.Apaterno,
@@ -36,57 +39,71 @@ class Alumno(ContenedorDatos):
                 "matricula": self.matricula
             }
         elif hasattr(self, 'datos'):
-            # Es un contenedor de alumnos
-            return [alumno.to_dict() for alumno in self.datos if isinstance(alumno, Alumno)]
-        else:
-            raise ValueError("El objeto no tiene atributos válidos para convertir a diccionario.")
+            return [alumno.to_dict() for alumno in self.datos]
 
-def guardar_en_json(data, nombre_archivo):
-    ruta_archivo = os.path.join('alumnos1', nombre_archivo)    
-    with open(ruta_archivo, 'w') as file:
-        if isinstance(data, Alumno):
-            # Si es un solo objeto Alumno
-            alumnos_data = [data.to_dict()]
-        elif isinstance(data, ContenedorDatos):
-            # Si es un contenedor de datos
-            alumnos_data = data.to_dict()  # Cambia aquí para usar el to_dict del contenedor
-        else:
-            raise ValueError("El argumento 'data' debe ser un objeto Alumno o una instancia de ContenedorDatos.")
-        
-        json.dump(alumnos_data, file, indent=4)
+
+def guardar_en_json(data: Alumno, nombre_archivo: str, directorio: str = 'alumnos1') -> None:
+    """
+    Guarda los datos en un archivo JSON.    
+    :param data: Puede ser un Alumno individual o un contenedor de Alumnos.
+    :param nombre_archivo: Nombre del archivo JSON a crear.
+    :param directorio: Directorio donde se guardará el archivo (por defecto 'alumnos1').
+    """
+    os.makedirs(directorio, exist_ok=True)
+    ruta_archivo = os.path.join(directorio, nombre_archivo)    
+    
+    try:
+        with open(ruta_archivo, 'w', encoding='utf-8') as file:
+            json_data = data.to_dict()
+            if not hasattr(data, 'datos'):
+                json_data = []  # Envolver en lista si es un alumno individual
+            json.dump(json_data, file, indent=4, ensure_ascii=False)
+        print(f"Los datos han sido guardados en '{ruta_archivo}'.")
+    except IOError as e:
+        print(f"Error al escribir el archivo: {e}")
 
 if __name__ == '__main__':
-    alumno0 = Alumno("Wilbert Omar", "Acosta", "Barrera", "AOBW9980318HCLCRL08", "22170021")
+    # Crear algunos alumnos
+    alumno0 = Alumno("Wilbert Omar", "Acosta", "Barrera", "AOBW9980318HCLCRL08", "221700211")
     alumno1 = Alumno("Juan Carlos", "Fernandez", "Lopez", "JCFL992018HCLCRL01", "22170022")
-    alumno2 = Alumno("Maria Fernanda", "Gomez", "Martinez", "MGFM992018HCLCRL02", "22170023")
+    alumno2 = Alumno("Maria Fernanda", "Gomez", "Martinez", "MGFM992018HCLCRL02", "221700233")
+    alumno3 = Alumno("José Eliaz", "Galarza", "Pedroza", "DJFKSLDMS1547845KD", "221740024")
 
-    arreglo = Alumno()  # Esto inicializa un contenedor de datos
+    # Crear un contenedor y agregar los alumnos
+    contenedor = Alumno()  # Inicializa un contenedor vacío
+    contenedor.agregar_dato(alumno0)
+    contenedor.agregar_dato(alumno1)
+    contenedor.agregar_dato(alumno2)
+    contenedor.agregar_dato(alumno3)
 
-    arreglo.agregar_dato(alumno0)
-    arreglo.agregar_dato(alumno1)
-    arreglo.agregar_dato(alumno2)
-
-    print("Antes de editar y eliminar:")
-    print(arreglo)
+    #print("Antes de editar y eliminar:")
+    #print(contenedor)
     
     # Editar un alumno
-    arreglo.editar_dato(1, nombres="Juan Carlos Editado", Apaterno="Fernandez Editado")
-    print("\nDespués de editar un alumno:")
-    print(arreglo)
+    #contenedor.editar_dato(1, nombres="Juan Carlos Editado", Apaterno="Fernandez Editado")
+    #print("\nDespués de editar un alumno:")
+    #print(contenedor)
     
     # Eliminar un alumno
-   # arreglo.eliminar_dato(0)
-   # print("\nDespués de eliminar un alumno:")
-   # print(arreglo)
+    #contenedor.eliminar_dato(0)
+    #print("\nDespués de eliminar un alumno:")
+    #print(contenedor)
     
-    # Longitud del arreglo
-    print(f"Total de datos en el contenedor: {len(arreglo)}")
+    # Longitud del contenedor
+    print(f"\nTotal de alumnos en el contenedor: {len(contenedor)}")
     
-    # Ingresar mediante índice
-    print(arreglo[1])
+    # Acceder mediante índice
+    print("\nAlumno en el índice 1:")
+    print(contenedor[1])
     
-    guardar_en_json(alumno0, 'alumno0.json')
-    print("\nLos datos han sido guardados en 'alumno0.json'.")
+    # Guardar un alumno individual en JSON
+    #guardar_en_json(alumno0, 'alumno0.json')
     
-    guardar_en_json(arreglo, 'alumnos.json')
-    print("\nLos datos han sido guardados en 'alumnos.json'.")
+    # Guardar todos los alumnos en JSON
+    guardar_en_json(contenedor, 'alumnos.json')
+
+    # Demostrar funcionalidad de alumno individual
+    #print("\nInformación de alumno individual:")
+    #print(alumno0)
+    
+    #print(contenedor)

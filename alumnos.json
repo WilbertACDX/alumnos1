@@ -1,25 +1,30 @@
 [
-    [
-        {
-            "nombres": "Wilbert Omar",
-            "Apaterno": "Acosta",
-            "Amaterno": "Barrera",
-            "curp": "AOBW9980318HCLCRL08",
-            "matricula": "22170021"
-        },
-        {
-            "nombres": "Juan Carlos Editado",
-            "Apaterno": "Fernandez Editado",
-            "Amaterno": "Lopez",
-            "curp": "JCFL992018HCLCRL01",
-            "matricula": "22170022"
-        },
-        {
-            "nombres": "Maria Fernanda",
-            "Apaterno": "Gomez",
-            "Amaterno": "Martinez",
-            "curp": "MGFM992018HCLCRL02",
-            "matricula": "22170023"
-        }
-    ]
+    {
+        "nombres": "Wilbert Omar",
+        "Apaterno": "Acosta",
+        "Amaterno": "Barrera",
+        "curp": "AOBW9980318HCLCRL08",
+        "matricula": "221700211"
+    },
+    {
+        "nombres": "Juan Carlos",
+        "Apaterno": "Fernandez",
+        "Amaterno": "Lopez",
+        "curp": "JCFL992018HCLCRL01",
+        "matricula": "22170022"
+    },
+    {
+        "nombres": "Maria Fernanda",
+        "Apaterno": "Gomez",
+        "Amaterno": "Martinez",
+        "curp": "MGFM992018HCLCRL02",
+        "matricula": "221700233"
+    },
+    {
+        "nombres": "José Eliaz",
+        "Apaterno": "Galarza",
+        "Amaterno": "Pedroza",
+        "curp": "DJFKSLDMS1547845KD",
+        "matricula": "221740024"
+    }
 ]

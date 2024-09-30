@@ -1,0 +1,80 @@
+[
+    {
+        "nombre": "Desarrollo de Software",
+        "clave": 210,
+        "grupos": [
+            {
+                "grado": "7",
+                "seccion": "A",
+                "alumnos": [
+                    {
+                        "nombres": "Wilbert Omar",
+                        "Apaterno": "Acosta",
+                        "Amaterno": "Barrera",
+                        "curp": "AOBW9980318HCLCRL08",
+                        "matricula": "22170021"
+                    },
+                    {
+                        "nombres": "Juan Carlos",
+                        "Apaterno": "Fernandez",
+                        "Amaterno": "Lopez",
+                        "curp": "JCFL992018HCLCRL01",
+                        "matricula": "22170022"
+                    }
+                ]
+            },
+            {
+                "grado": "7",
+                "seccion": "B",
+                "alumnos": [
+                    {
+                        "nombres": "Maria Fernanda",
+                        "Apaterno": "Gomez",
+                        "Amaterno": "Martinez",
+                        "curp": "MGFM992018HCLCRL02",
+                        "matricula": "22170023"
+                    },
+                    {
+                        "nombres": "José Eliaz",
+                        "Apaterno": "Galarza",
+                        "Amaterno": "Pedroza",
+                        "curp": "DJFKSLDMS1547845KD",
+                        "matricula": "221740024"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "nombre": "Administración",
+        "clave": 211,
+        "grupos": [
+            {
+                "grado": "5",
+                "seccion": "A",
+                "alumnos": [
+                    {
+                        "nombres": "Felix Gael",
+                        "Apaterno": "Saldivar",
+                        "Amaterno": "Martinez",
+                        "curp": "KDFGFDG541515_FG",
+                        "matricula": "221740025"
+                    }
+                ]
+            },
+            {
+                "grado": "5",
+                "seccion": "B",
+                "alumnos": [
+                    {
+                        "nombres": "Kevin Alexis",
+                        "Apaterno": "Yescas",
+                        "Amaterno": "Felix",
+                        "curp": "YFKA544541151sd",
+                        "matricula": "221740026"
+                    }
+                ]
+            }
+        ]
+    }
+]

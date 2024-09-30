@@ -31,7 +31,7 @@
         "seccion": "B",
         "alumnos": [
             {
-                "nombres": "Jose Eliaz",
+                "nombres": "José Eliaz",
                 "Apaterno": "Galarza",
                 "Amaterno": "Pedroza",
                 "curp": "DJFKSLDMS1547845KD",
@@ -49,7 +49,7 @@
                 "Apaterno": "Yescas",
                 "Amaterno": "Felix",
                 "curp": "YFKA544541151sd",
-                "matricula": "2217400268"
+                "matricula": "2217400266"
             }
         ]
     }
