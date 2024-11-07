@@ -1,6 +1,6 @@
 [
     {
-        "grado": 6,
+        "grado": "1",
         "seccion": "A",
         "alumnos": [
             {
@@ -23,33 +23,85 @@
                 "Amaterno": "Martinez",
                 "curp": "MGFM992018HCLCRL02",
                 "matricula": "22170023"
+            },
+            {
+                "nombres": "José ",
+                "Apaterno": "Galarza",
+                "Amaterno": "Pedroza",
+                "curp": "SKDSKFDSLF1221dsd",
+                "matricula": "22145412"
+            },
+            {
+                "nombres": "Manuel",
+                "Apaterno": "Alvarez",
+                "Amaterno": "Sánchez",
+                "curp": "AONS41515DJFDLK51445",
+                "matricula": "22170053"
             }
         ]
     },
     {
-        "grado": 6,
-        "seccion": "B",
+        "grado": "3",
+        "seccion": "D",
         "alumnos": [
             {
-                "nombres": "José Eliaz",
-                "Apaterno": "Galarza",
-                "Amaterno": "Pedroza",
-                "curp": "DJFKSLDMS1547845KD",
-                "matricula": "221740024"
+                "nombres": "dzfvxcfv",
+                "Apaterno": "fgfdg",
+                "Amaterno": "fgfg",
+                "curp": "fgfg",
+                "matricula": "fg"
+            }
+        ]
+    },
+    {
+        "grado": "11",
+        "seccion": "C",
+        "alumnos": []
+    },
+    {
+        "grado": "6",
+        "seccion": "P",
+        "alumnos": [
+            {
+                "nombres": "aaaaaaa",
+                "Apaterno": "aaaaaaaaaaa",
+                "Amaterno": "aaaaaaaaaa",
+                "curp": "aaaaaaaaaa",
+                "matricula": "aaaaaaaa"
             },
             {
-                "nombres": "Felix Gael",
-                "Apaterno": "Saldivar",
-                "Amaterno": "Martinez",
-                "curp": "KDFGFDG541515_FG",
-                "matricula": "221740025"
+                "nombres": "dfghfh",
+                "Apaterno": "ghjgj",
+                "Amaterno": "gfhgfj",
+                "curp": "gfjhg",
+                "matricula": "gffj"
             },
             {
-                "nombres": "Kevin Alexis",
-                "Apaterno": "Yescas",
-                "Amaterno": "Felix",
-                "curp": "YFKA544541151sd",
-                "matricula": "2217400266"
+                "nombres": "cccc",
+                "Apaterno": "cccc",
+                "Amaterno": "cccc",
+                "curp": "cccc",
+                "matricula": "ccc"
+            }
+        ]
+    },
+    {
+        "grado": "12",
+        "seccion": "q",
+        "alumnos": [
+            {
+                "nombres": "aaaa",
+                "Apaterno": "aaaa",
+                "Amaterno": "aaaa",
+                "curp": "aaa",
+                "matricula": "aaa"
+            },
+            {
+                "nombres": "bbbbb",
+                "Apaterno": "bbbb",
+                "Amaterno": "bbb",
+                "curp": "bbb",
+                "matricula": "bbb"
             }
         ]
     }

@@ -46,8 +46,8 @@
         ]
     },
     {
-        "nombre": "Administración",
-        "clave": 211,
+        "nombre": "Mecatronica",
+        "clave": "020",
         "grupos": [
             {
                 "grado": "5",
@@ -72,6 +72,82 @@
                         "Amaterno": "Felix",
                         "curp": "YFKA544541151sd",
                         "matricula": "221740026"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "nombre": "Ingeniería Industrial",
+        "clave": "021",
+        "grupos": [
+            {
+                "grado": "2",
+                "seccion": "B",
+                "alumnos": [
+                    {
+                        "nombres": "José",
+                        "Apaterno": "Martinez",
+                        "Amaterno": "Rodríguez",
+                        "curp": "SAKDSf544ddfs",
+                        "matricula": "22170085"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "nombre": "Odontología",
+        "clave": "001",
+        "grupos": []
+    },
+    {
+        "nombre": "Admon",
+        "clave": "005",
+        "grupos": [
+            {
+                "grado": "2",
+                "seccion": "B",
+                "alumnos": [
+                    {
+                        "nombres": "Pedro",
+                        "Apaterno": "Sanchez",
+                        "Amaterno": "MTZ",
+                        "curp": "sdfdsf",
+                        "matricula": "23231325"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "nombre": "Ciencias",
+        "clave": "0004",
+        "grupos": [
+            {
+                "grado": "5",
+                "seccion": "B",
+                "alumnos": [
+                    {
+                        "nombres": "Elizabeth",
+                        "Apaterno": "Barrera",
+                        "Amaterno": "Vázquez",
+                        "curp": "fdklfgd",
+                        "matricula": "fgdfg"
+                    },
+                    {
+                        "nombres": "aaaa",
+                        "Apaterno": "aaaa",
+                        "Amaterno": "aaaa",
+                        "curp": "aaaa",
+                        "matricula": "aaa"
+                    },
+                    {
+                        "nombres": "ssss",
+                        "Apaterno": "ssss",
+                        "Amaterno": "ssss",
+                        "curp": "ssss",
+                        "matricula": "sss"
                     }
                 ]
             }
